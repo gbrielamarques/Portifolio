@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100;500&display=swap');
+
+:root {
+    --color-light-gray: #ccc;
+    --color-paragraph: #828282;
+    --font-paragraph: "Nunito", serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f9faff;
+}
+
+.figure1 img {
+    position: absolute; 
+    right: 0;
+    top: 58px;
+    z-index: -1;
+    height: 620px;
+    right: 140px;
+    opacity: 0; /*item comeca inviisivel*/
+    transform: translateY(50px); 
+    animation: fadeInUp 1s ease-out forwards, floating 3s ease-in-out infinite;
+}
+
+header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 120px; /*referente ao espaço INTERNO*/
+    height: 56px;
+}
+
+.header-left h1 {
+    font-family: "Comfortaa", serif;
+    font-size: 28px;
+    line-height: 32px;
+    color: var(--color-light-title);
+    font-weight: bold;
+}
+
+.header-right a {
+    margin-left: 24px;
+    padding: 6px 12px;
+    background-color: transparent;
+    color: #000000; /*referente ao texto*/
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /*indica com o mouse quando sobrepassa sobre o textto*/
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav{
+    display: flex; /*muda a alinhamento dos objetos, ficam lado a lado*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /*espaco entre os elementos*/
+    margin: 0;
+}
+
+nav ul li a {
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    color: #333;
+}
+
+.header-right a:hover {
+    color: var(--color-light-gray);
+    transform: scale(1.1);
+}
+
+.header-left span {
+  	font-family: "Comfortaa", serif;
+    font-size: 18px;
+  	font-weight: 700;
+  	font-style: bold;
+}
+
+/* style do about */
+
+.about { 
+    max-width: 486px; /*max permite que o elemento sela 'maleavel' altere de tamanho em resoluceos de tela diferentes*/
+    /* margin-top: 54px;
+    margin-left: 120px; */
+    padding: 54px 120px 42px; /*1° top; 2° direita; 3° baixo*/
+    transform: translateY(20px); /* Começa ligeiramente abaixo */
+    animation: fadeInUp 1s ease-out forwards; /* Aparece com animação */
+}
+
+.about h2 {
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 64px;
+    margin-bottom: 32px;
+    color: #25282b;
+    margin-top: 0;
+}
+
+.about p {
+    font-family: var(--font-paragraph);
+    line-height: 1.5;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0%;
+    color: var(--color-paragraph);
+    margin-top: 32px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center; 
+}
+
+.buttons a {
+    text-decoration: none;
+    font-family: "Comfortaa", serif;
+    display: inline-block;
+    padding: 12px 24px;    
+    transition: transform 0.3s ease; 
+    text-decoration: none;
+}
+
+.primary {
+    background-color: #25282b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px; 
+    height: auto;
+    cursor: pointer;
+    font-family: "Comfortaa", serif;
+    text-decoration: none;
+    font-size: 14px;
+
+}
+
+.secondary {
+    background-color: transparent;
+    color: #25282b;
+    border: 2px solid #25282b;
+    border-radius: 8px;
+    padding: 12px 24px; 
+    height: auto; 
+    cursor: pointer;
+    font-family: "Comfortaa", serif;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.primary:hover {
+    color: var(--color-light-gray);
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+}
+
+.secondary:hover {
+    color: #fff;
+    background-color: #25282b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+}
+
+.secondaryNOT:hover {
+    color: #fff;
+    transform: translate(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* styles section para projetos */
+
+.projects, 
+.contact {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 144px;
+}
+
+.contact {
+    margin-bottom: 64px;
+}
+
+.underline {
+    display: inline-block;
+    position: relative;
+    font-size: 36px; 
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+  
+.underline::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: black;
+}
+
+.card {
+    display: flex;
+    background: white;
+    width: 992px;
+    height: 524px;
+    border-radius: 24px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
+}
+
+.card:hover{
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in;
+}
+
+.card-left {
+    flex: 1;
+    border-radius: 24px 0 0 24px;
+    padding: 132px 24px;
+}
+
+.card-left h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    margin-top: 0;
+    
+}
+
+.card-left p {
+    font-size: 18px;
+    color: #828282;
+    margin-bottom: 24px;
+    font-family: var(--font-paragraph);
+    line-height: 1.5;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+.card-right {
+    flex: 1;
+    border-radius: 0 24px 24px 0;
+    /* background-image: url(assets/img/imagem 2.jpg); */
+}
+
+.card-right img {
+    width: 496px;
+    height: 524px;
+    border-radius: 0 24px 24px 0;
+}
+
+.card-left button{
+    border-radius: 24px;
+}
+
+.card-reverse {
+    flex-direction: row-reverse;
+}
+
+.card-reverse img{
+    border-radius: 20px 0 0 20px;
+}
+
+/* style form */
+.form-contact {
+display: flex;
+flex-direction: column;
+width: 400px;
+gap: 24px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input label{
+    margin-bottom: 8px;
+    color: #25282b;
+    font-size: 16px;
+}
+
+.form-input input{
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 1px #e8ecf4;
+    height: 40px;
+    padding-left: 8px;
+    line-height: 40px;
+}
+
+.form-input textarea{
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 1px #e8ecf4;
+    height: 160px;
+    line-height: 16px;
+    padding: 8px;
+}
+
+.form-contact .button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.footer img {
+    width: 100%;
+}
+
+form .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 0 0;
+}
+
+.icons img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.icons img:hover {
+    transform: scale(1.2); 
+}
+
+footer .footer {
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    margin: 0;
+}
+
+.last-info h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 16px;
+    font-family: "Nunito", serif;
+    font-size: 16px;
+    color: var(--color-paragraph);
+    font-weight: 400;
+}
+
+/* Animations */
+
+@keyframes floating {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
