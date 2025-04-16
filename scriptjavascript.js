@@ -152,6 +152,23 @@ function objetosEJson(){
     console.log(json);
 }
 
+function objetosEJson(){
+    let pessoa = {nome: "Gabriela", idade: 10};
+    let json = JSON.stringify(pessoa);
+    console.log(json);
+}
+
+async function trabalhandocomApis(){
+    try{
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/posts/1"
+        );
+        const data = await response.json();
+        console.log(data);
+    }catch (error) {
+        console.error("Erro ao buscar api:", error);
+    }
+}
 
 
 function main(){
